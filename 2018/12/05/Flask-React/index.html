@@ -151,21 +151,21 @@
 </nav>
 
         <div id="main">
-            <div class="post_page_title_img" style="height: 25rem;background-image: url(https://i.postimg.cc/Hn4fKNN3/3123.jpg);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;">
-                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2>README</h2></a>
+            <div class="post_page_title_img" style="height: 25rem;background-image: url();background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;">
+                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2>Flask+React</h2></a>
             </div>
             <!-- Post -->
             <div class="typo" style="padding: 3rem;">
-                <h1 id="Welcome-to-Canjie’s-home"><a href="#Welcome-to-Canjie’s-home" class="headerlink" title="Welcome to Canjie’s home!"></a>Welcome to Canjie’s home!</h1><h2 id="A-simple-self-introduction"><a href="#A-simple-self-introduction" class="headerlink" title="A simple self-introduction"></a>A simple self-introduction</h2><p>I’m currently pursuing MS degree in Electrical Engineering at Columbia University. I achieved my BS degree at Shanghai Jiao Tong University. My works mainly focus on Web Development, including both Front-end and Back-end. Also have experience in Mobile Development on Android and iOS. I Plan to share some notes and projects at here, please feel free to leave a comment.<br>If you are a recruiter, you can find my resumé just by clicking ‘Resumé’ on the above navigation bar. Reach me out on Linkedin or directly email me at <a href="mailto:canjie.shi@columbia.edu" target="_blank" rel="noopener">canjie.shi@columbia.edu</a>.</p>
-<h2 id="Purpose"><a href="#Purpose" class="headerlink" title="Purpose"></a>Purpose</h2><p>An engineer who doesn’t have a personal website is not a good programming ape.  </p>
-<ul>
-<li>Keep some valuable technical notes</li>
-<li>Share interesting things in my life</li>
-<li>Introduce some projects I did</li>
-<li>Find me a job ;)</li>
-</ul>
-<p>May often be too lazy to update. But nevermind, I know you are not that bored to visit my website that often. Have fun!</p>
-<p><a href="https://postimg.cc/wRR5dZ9F" target="_blank" rel="noopener"><img src="https://i.postimg.cc/Y0bdQBZc/we-were-on-a-break-you-had-all-week-to-2236917.png" alt="we-were-on-a-break-you-had-all-week-to-2236917.png"></a></p>
+                <h1 id="05-12-React-Flask"><a href="#05-12-React-Flask" class="headerlink" title="05/12 React + Flask"></a>05/12 React + Flask</h1><h2 id="Purpose"><a href="#Purpose" class="headerlink" title="Purpose"></a>Purpose</h2><p>Today I started to explore the presentaion part of the EECS6893 Big Data project. In this project, we want to do a toxic comment classfication. It’s based on the same competition on Kaggle. After training the model, we want to apply our model to classify some toxic tweets on Twitter and make some data visualizations. </p>
+<h2 id="React"><a href="#React" class="headerlink" title="React"></a>React</h2><p>A Javascript library maintained by Facebook. I use it for the front-end part.<br>Could be simply deployed by using <code>create-react-app</code>, but I followed another tutorial. First establish two folders: static &amp; server. We add <code>webpack.config.js</code> in <code>static</code> folder.</p>
+<p>In <code>package.json</code> file, add some commands: </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&quot;build&quot;: &quot;webpack -p --progress --config webpack.config.js&quot;,</span><br><span class="line">&quot;dev-build&quot;: &quot;webpack --progress -d --config webpack.config.js&quot;,</span><br><span class="line">&quot;watch&quot;: &quot;webpack --progress -d --config webpack.config.js --watch&quot;</span><br></pre></td></tr></table></figure>
+<p>Then we can simply use command <code>npm run watch</code> to build and run our program.</p>
+<p>The input data should be a list of json object, I want to draw Pie Chart to reflect the proportion of each type of toxic comment. To implement that, Ajax should be used to fetch input data from server. Once receive the data, modify the default state (an important concept in React).</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">//index.jsx</span><br><span class="line">componentDidMount() &#123;</span><br><span class="line">	fetch(url)</span><br><span class="line">		.then(res =&gt; res.json())</span><br><span class="line">		.then(</span><br><span class="line">			(result) =&gt; &#123;</span><br><span class="line">				this.setState(&#123;</span><br><span class="line">					isLoaded: true,</span><br><span class="line">					items: result</span><br><span class="line">				&#125;);</span><br><span class="line">			&#125;,</span><br><span class="line">			(error) =&gt; &#123;</span><br><span class="line">				//Deal with Error</span><br><span class="line">			&#125;</span><br><span class="line">		)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>To draw the Pie Chart, I used the fantastic <code>react-easy-chart</code>. Can be found <a href="https://rma-consulting.github.io/react-easy-chart" target="_blank" rel="noopener">here</a>.  </p>
+<h2 id="Flask"><a href="#Flask" class="headerlink" title="Flask"></a>Flask</h2><p>Not my first time using Flask, so this part didn’t take me long time to complete. However, Twitter Streaming part is worth noting. At first, I can’t figure out how to stop the streaming. Tried to set a timeout but didn’t work. It turned out that timeout should be configured in the self-defined class by setting a time limit, and monitor current time by using <code>time.time()</code>.</p>
+<p>Also, I met CORS error problem at first for the AJAX part. Solved it by adding a header in response sent by server. <code>response.headers.add(&#39;Access-Control-Allow-Origin&#39;, &#39;*&#39;)</code></p>
 
             </div>
 
@@ -228,8 +228,8 @@ $('.btn_click_load').click(function() {
 -->
 <script type="text/javascript">
     var disqus_config = function () {
-        this.page.url = 'http://halflkaka.github.com/2018/12/04/first-post/';  // Replace PAGE_URL with your page's canonical URL variable
-        this.page.identifier = 'http://halflkaka.github.com/2018/12/04/first-post/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        this.page.url = 'http://halflkaka.github.com/2018/12/05/Flask-React/';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'http://halflkaka.github.com/2018/12/05/Flask-React/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
     };
 </script>
 
