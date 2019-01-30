@@ -151,18 +151,22 @@
 </nav>
 
         <div id="main">
-            <div class="post_page_title_img" style="height: 25rem;background-image: url(https://i.postimg.cc/44W9Kh3W/aws.jpg);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;">
-                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2>12/7/2018</h2></a>
+            <div class="post_page_title_img" style="height: 25rem;background-image: url(https://i.postimg.cc/wTXF5Vbc/36609883-computer-network.jpg);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;">
+                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2>CN NOTE 01/29</h2></a>
             </div>
             <!-- Post -->
             <div class="typo" style="padding: 3rem;">
-                <h1 id="Big-day-for-E6156-Microservices-and-Cloud-Application"><a href="#Big-day-for-E6156-Microservices-and-Cloud-Application" class="headerlink" title="Big day for E6156 Microservices and Cloud Application"></a>Big day for E6156 Microservices and Cloud Application</h1><p>Spent a whole semester figuring out what professor wants us to do, and took three days to complete it ;)  </p>
-<p>Finally, today we became the first group who presented the demo and finished the project.  </p>
-<h1 id="Some-details"><a href="#Some-details" class="headerlink" title="Some details"></a>Some details</h1><p>It’s a project based on Node.JS and AWS Micro-services. We walked through the whole process of User Registeration, Email Verification, Token Generation, User Login, Third-party Login (Google API), User Profile… We learned DynamoDB, Lambda Function, API Gateway, Elastic Beanstalk, S3, RDS…  </p>
-<p>AWS is really powerful for web development! Definitely gonna dive deeper into it. Really thankful to our team, they are the best teammates.  </p>
-<p>I will post the whole project with more details in the future, right now you can check out Elastic Beanstalk part of code on my <a href="https://github.com/halflkaka/AWS-Serverless-Web" target="_blank" rel="noopener">Github</a>.</p>
-<h1 id="Other"><a href="#Other" class="headerlink" title="Other"></a>Other</h1><p>Just knew about the release of Flusk 1.0. Spent a few minutes taking a look, have to say it’s just amazing! After the semester ends, hopefully I can spend more time on it and try to do some cool stuff. </p>
-<p><a href="https://postimg.cc/phCZtCg0" target="_blank" rel="noopener"><img src="https://i.postimg.cc/tJQmWmDH/7-2-1.jpg" alt="7-2-1.jpg"></a></p>
+                <h1 id="CN-01-29"><a href="#CN-01-29" class="headerlink" title="CN 01/29"></a>CN 01/29</h1><h1 id="Application-layer"><a href="#Application-layer" class="headerlink" title="Application layer"></a>Application layer</h1><h2 id="Application-architectures"><a href="#Application-architectures" class="headerlink" title="Application architectures"></a>Application architectures</h2><h3 id="Client-Server"><a href="#Client-Server" class="headerlink" title="Client-Server"></a>Client-Server</h3><p>Server </p>
+<pre><code>* Always on host
+* Permanent IP
+</code></pre><p>Client</p>
+<pre><code>* May have dynamic IP
+* Not communicate directly with each other
+</code></pre><h3 id="P2P"><a href="#P2P" class="headerlink" title="P2P"></a>P2P</h3><p>Not always-on server. Peers request service from other peers.<br>Self scalability - new peers bring new service capacity as well as new service demands</p>
+<h2 id="Sockets"><a href="#Sockets" class="headerlink" title="Sockets"></a>Sockets</h2><p>Process sends/receives messages through sockets.</p>
+<ul>
+<li>Addressing processes<br>To receive messages, process must have identifier.<br>Q : Does IP address of host on which process runs suffice for identifying the process?<br>A: No, many processes can run on same host<br>Identifier includes both IP address and port numbers.</li>
+</ul>
 
             </div>
 
@@ -225,8 +229,8 @@ $('.btn_click_load').click(function() {
 -->
 <script type="text/javascript">
     var disqus_config = function () {
-        this.page.url = 'http://halflkaka.github.com/2018/12/07/12-7-2018/';  // Replace PAGE_URL with your page's canonical URL variable
-        this.page.identifier = 'http://halflkaka.github.com/2018/12/07/12-7-2018/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        this.page.url = 'http://halflkaka.github.com/2019/01/29/CN0129/';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'http://halflkaka.github.com/2019/01/29/CN0129/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
     };
 </script>
 

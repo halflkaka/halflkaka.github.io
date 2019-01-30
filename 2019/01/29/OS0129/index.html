@@ -151,19 +151,16 @@
 </nav>
 
         <div id="main">
-            <div class="post_page_title_img" style="height: 25rem;background-image: url(https://i.postimg.cc/44W9Kh3W/aws.jpg);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;">
-                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2>12/7/2018</h2></a>
+            <div class="post_page_title_img" style="height: 25rem;background-image: url(https://i.postimg.cc/vmytktWQ/ximg-5b68e80f77e33-png-pagespeed-gp-jp-jw-pj-ws-js-rj-rp-rw-ri-c.png);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;">
+                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2>OS NOTE 01/29</h2></a>
             </div>
             <!-- Post -->
             <div class="typo" style="padding: 3rem;">
-                <h1 id="Big-day-for-E6156-Microservices-and-Cloud-Application"><a href="#Big-day-for-E6156-Microservices-and-Cloud-Application" class="headerlink" title="Big day for E6156 Microservices and Cloud Application"></a>Big day for E6156 Microservices and Cloud Application</h1><p>Spent a whole semester figuring out what professor wants us to do, and took three days to complete it ;)  </p>
-<p>Finally, today we became the first group who presented the demo and finished the project.  </p>
-<h1 id="Some-details"><a href="#Some-details" class="headerlink" title="Some details"></a>Some details</h1><p>It’s a project based on Node.JS and AWS Micro-services. We walked through the whole process of User Registeration, Email Verification, Token Generation, User Login, Third-party Login (Google API), User Profile… We learned DynamoDB, Lambda Function, API Gateway, Elastic Beanstalk, S3, RDS…  </p>
-<p>AWS is really powerful for web development! Definitely gonna dive deeper into it. Really thankful to our team, they are the best teammates.  </p>
-<p>I will post the whole project with more details in the future, right now you can check out Elastic Beanstalk part of code on my <a href="https://github.com/halflkaka/AWS-Serverless-Web" target="_blank" rel="noopener">Github</a>.</p>
-<h1 id="Other"><a href="#Other" class="headerlink" title="Other"></a>Other</h1><p>Just knew about the release of Flusk 1.0. Spent a few minutes taking a look, have to say it’s just amazing! After the semester ends, hopefully I can spend more time on it and try to do some cool stuff. </p>
-<p><a href="https://postimg.cc/phCZtCg0" target="_blank" rel="noopener"><img src="https://i.postimg.cc/tJQmWmDH/7-2-1.jpg" alt="7-2-1.jpg"></a></p>
-
+                <h1 id="OS-01-29"><a href="#OS-01-29" class="headerlink" title="OS 01/29"></a>OS 01/29</h1><h1 id="Process"><a href="#Process" class="headerlink" title="Process"></a>Process</h1><h2 id="What-if-parent-process-killed-before-child"><a href="#What-if-parent-process-killed-before-child" class="headerlink" title="What if parent process killed before child?"></a>What if parent process killed before child?</h2><p>Parent process terminates before child, child will change its parent to the initial process. It has ppid=1. (Orphan process get adopted by process no.1) Init process always runs, and it’s by default the parent of all processes.</p>
+<h2 id="What-if-child-process-terminates-first-but-parent-never-calls-waitpid"><a href="#What-if-child-process-terminates-first-but-parent-never-calls-waitpid" class="headerlink" title="What if child process terminates first but parent never calls waitpid?"></a>What if child process terminates first but parent never calls waitpid?</h2><p>When a process terminates, kernel keeps around struct task_struct, process will stay in system. When parent calls waitpid, will return child process status. Until then, this zombie process will be harvested.<br>If the parent didn’t call waitpid specifically, after parent died, zombie child process will be adopted by init process, which always calls waitpid. So zombie process can be harvested.</p>
+<h1 id="Signal"><a href="#Signal" class="headerlink" title="Signal"></a>Signal</h1><p>Interprocess communication (IPC). One way for process communicate to another process.<br>Ex. Ctrl+C sends a signal to process, call kill function (signal number 2)</p>
+<h2 id="How-to-catch-signal"><a href="#How-to-catch-signal" class="headerlink" title="How to catch signal"></a>How to catch signal</h2><p>Call signal function to register a signal handler.<br><code>signnal(SIGINT, &amp;sig_int) == SIG_ERR</code><br>When a signal happens, immediately jumps to signal handler (sig_int function).</p>
+<h2 id="Signal-9-can’t-be-caught"><a href="#Signal-9-can’t-be-caught" class="headerlink" title="Signal 9 can’t be caught!"></a>Signal 9 can’t be caught!</h2><h1 id="File-I-O"><a href="#File-I-O" class="headerlink" title="File I/O"></a>File I/O</h1>
             </div>
 
             <!-- Post Comments -->
@@ -225,8 +222,8 @@ $('.btn_click_load').click(function() {
 -->
 <script type="text/javascript">
     var disqus_config = function () {
-        this.page.url = 'http://halflkaka.github.com/2018/12/07/12-7-2018/';  // Replace PAGE_URL with your page's canonical URL variable
-        this.page.identifier = 'http://halflkaka.github.com/2018/12/07/12-7-2018/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        this.page.url = 'http://halflkaka.github.com/2019/01/29/OS0129/';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'http://halflkaka.github.com/2019/01/29/OS0129/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
     };
 </script>
 
